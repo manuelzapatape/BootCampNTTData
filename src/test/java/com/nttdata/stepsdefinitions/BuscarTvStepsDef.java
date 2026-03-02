@@ -2,7 +2,6 @@ package com.nttdata.stepsdefinitions;
 
 import com.nttdata.steps.BuscarTvSteps;
 import com.nttdata.steps.InventorySteps;
-import com.nttdata.steps.LoginSteps;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
@@ -23,18 +22,23 @@ public class BuscarTvStepsDef {
     }
 
     @Dado("que me encuentro en la página Mercado Libre")
-    public void_que_me_encuentro_en_la_página_Mercado_Libre() {
+    public void que_me_encuentro_en_la_página_Mercado_Libre() {
         driver = getDriver();
         driver.get("https://www.mercadolibre.com.pe/");
         screenShot();
     }
-    @Cuando("realizo la búsqueda: {string} de Tv Led LG")
+    @Cuando("realizo la búsqueda de: {string}")
     public void realizo_la_búsqueda_de_TV_LED_LG(String television) {
-        BuscarTvSteps buscarTvSteps = new LoginSteps(driver);
+        BuscarTvSteps buscarTvSteps = new BuscarTvSteps(driver);
         buscarTvSteps.ingresoTv(television);
         screenShot();
     }
-    @Entonces("valido que debería aparecer el título de {string}")
+    @Entonces ("visualizo Tvs LG")
+    public void visualizo_Tvs_LG() {
+        InventorySteps inventorySteps = new InventorySteps(driver);
+        inventorySteps.manejarPopUp();
+    }
+    @Y ("valido que debería aparecer el título de {string}")
     public void valido_que_debería_aparecer_el_título_de(String expectedTitle) {
         String title =  inventorySteps(driver).getTitle();
         //prueba: validamos el título del producto

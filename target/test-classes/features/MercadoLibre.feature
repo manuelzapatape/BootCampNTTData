@@ -7,7 +7,8 @@ Característica: buscaProducto
 
   @test
   Escenario: Buscar TV Led
-    Dado que me encuentro en la página "https://www.mercadolibre.com.pe/"
-    Cuando realizo la búsqueda de tv led lg: "standard_user" y contraseña: "secret_sauce"
-    Entonces valido que debería aparecer el título de "Products"
+    Dado que me encuentro en la página Mercado Libre
+    Cuando realizo la búsqueda de: "Tv Led LG"
+    Entonces visualizo Tvs LG
+    Y valido que debería aparecer el título de "Tv led lg"
     Y también valido que al menos exista un item

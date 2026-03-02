@@ -1,10 +1,7 @@
 package com.nttdata.steps;
 
-import com.nttdata.core.DriverManager;
 import com.nttdata.page.InventoryPage;
-import com.nttdata.page.LoginPage;
 import com.nttdata.page.MercadoLibrePage;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,6 +39,7 @@ public class BuscarTvSteps {
     }
 
 
+
     public void ingresoTv(String television) {
         tvLed(television);
         esperaImplicita();
@@ -50,4 +48,4 @@ public class BuscarTvSteps {
 }
 
 
-}
+
