@@ -1,8 +1,6 @@
 package com.nttdata.steps;
 
 import com.nttdata.page.InventoryPage;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -22,7 +20,7 @@ public class InventorySteps {
      * @return el valor del título de la pantalla de productos
      */
     public String getTitle(){
-        return this.driver.findElement(InventoryPage.productsTitle).getText();
+        return this.driver.findElement(InventoryPage.tvTitle).getText();
     }
 
     /**
