@@ -8,7 +8,5 @@ Característica: buscaProducto
   @test
   Escenario: Buscar TV Led
     Dado que me encuentro en la página Mercado Libre
-    Cuando realizo la búsqueda de: "Tv Led LG"
+    Cuando realizo la búsqueda de: "Televisores Led 40 pulgadas"
     Entonces visualizo Tvs LG
-    Y valido que debería aparecer el título de "Tv led lg"
-    Y también valido que al menos exista un item

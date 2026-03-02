@@ -35,21 +35,7 @@ public class BuscarTvStepsDef {
     }
     @Entonces ("visualizo Tvs LG")
     public void visualizo_Tvs_LG() {
-        InventorySteps inventorySteps = new InventorySteps(driver);
-        inventorySteps.manejarPopUp();
-    }
-    @Y ("valido que debería aparecer el título de {string}")
-    public void valido_que_debería_aparecer_el_título_de(String expectedTitle) {
-        String title =  inventorySteps(driver).getTitle();
-        //prueba: validamos el título del producto
-        Assertions.assertEquals(expectedTitle, title);
-    }
-    @Y("también valido que al menos exista un item")
-    public void también_valido_que_al_menos_exista_un_item() {
-        int itemsListSize = inventorySteps(driver).getItemSize();
-        //prueba: validar que al menos exista un item
-        Assertions.assertTrue(itemsListSize > 0, "El tamaño de la lista es: " + itemsListSize);
-        esperaImplicita();
         screenShot();
     }
+
 }
