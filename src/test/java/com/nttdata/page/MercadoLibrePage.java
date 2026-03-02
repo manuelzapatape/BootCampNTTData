@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class MercadoLibrePage {
 
     //Localizadores
-    public static By buscarInput  = By.id("cb1-edit");
-    public static By buscarButton = By.id("/html/body/header/div/div[2]/form/button");
+    public static By buscarInput  = By.ByXPath("//*[@id=\"cb1-edit\"]");
+    public static By buscarButton = By.cssSelector("body > header > div > div.nav-area.nav-top-area.nav-center-area > form > button > div");
 
 }

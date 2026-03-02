@@ -42,7 +42,7 @@ public class BuscarTvSteps {
     }
 
 
-    public void ingresoUsuarioYClave(String user, String password) {
+    public void ingresoTv(String television) {
         tvLed(television);
         esperaImplicita();
         buscar();

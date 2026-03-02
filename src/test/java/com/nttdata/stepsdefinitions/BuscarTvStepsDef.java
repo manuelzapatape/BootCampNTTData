@@ -1,5 +1,6 @@
 package com.nttdata.stepsdefinitions;
 
+import com.nttdata.steps.BuscarTvSteps;
 import com.nttdata.steps.InventorySteps;
 import com.nttdata.steps.LoginSteps;
 import io.cucumber.java.es.Cuando;
@@ -12,7 +13,8 @@ import org.openqa.selenium.WebDriver;
 import static com.nttdata.core.DriverManager.*;
 import static com.nttdata.core.DriverManager.screenShot;
 
-public class BuscarStepsDef {
+
+public class BuscarTvStepsDef {
 
     private WebDriver driver;
 
@@ -20,16 +22,16 @@ public class BuscarStepsDef {
         return new InventorySteps(driver);
     }
 
-    @Dado("que me encuentro en la página de login de Saucedemo")
-    public void que_me_encuentro_en_la_página_de_login_de_sacedemo() {
+    @Dado("que me encuentro en la página Mercado Libre")
+    public void_que_me_encuentro_en_la_página_Mercado_Libre() {
         driver = getDriver();
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://www.mercadolibre.com.pe/");
         screenShot();
     }
-    @Cuando("realizo la búsqueda de Tv Led LG")
-    public void inicio_sesión_con_las_credenciales_usuario_y_contraseña(String user, String password) {
-        LoginSteps loginSteps = new LoginSteps(driver);
-        loginSteps.ingresoUsuarioYClave(user,password);
+    @Cuando("realizo la búsqueda: {string} de Tv Led LG")
+    public void realizo_la_búsqueda_de_TV_LED_LG(String television) {
+        BuscarTvSteps buscarTvSteps = new LoginSteps(driver);
+        buscarTvSteps.ingresoTv(television);
         screenShot();
     }
     @Entonces("valido que debería aparecer el título de {string}")
